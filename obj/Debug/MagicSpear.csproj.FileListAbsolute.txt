@@ -1,0 +1,15 @@
+E:\Mod试做\MagicalSpear\MagicSpear\bin\Debug\MagicSpear.dll
+E:\Mod试做\MagicalSpear\MagicSpear\bin\Debug\MagicSpear.pdb
+E:\Mod试做\MagicalSpear\MagicSpear\bin\Debug\BepInEx.dll
+E:\Mod试做\MagicalSpear\MagicSpear\bin\Debug\HOOKS-Assembly-CSharp.dll
+E:\Mod试做\MagicalSpear\MagicSpear\bin\Debug\PUBLIC-Assembly-CSharp.dll
+E:\Mod试做\MagicalSpear\MagicSpear\bin\Debug\Unity.Mathematics.dll
+E:\Mod试做\MagicalSpear\MagicSpear\bin\Debug\UnityEngine.CoreModule.dll
+E:\Mod试做\MagicalSpear\MagicSpear\bin\Debug\UnityEngine.dll
+E:\Mod试做\MagicalSpear\MagicSpear\bin\Debug\UnityEngine.InputLegacyModule.dll
+E:\Mod试做\MagicalSpear\MagicSpear\bin\Debug\UnityEngine.SharedInternalsModule.dll
+E:\Mod试做\MagicalSpear\MagicSpear\obj\Debug\MagicSpear.csproj.AssemblyReference.cache
+E:\Mod试做\MagicalSpear\MagicSpear\obj\Debug\MagicSpear.csproj.CoreCompileInputs.cache
+E:\Mod试做\MagicalSpear\MagicSpear\obj\Debug\MagicSpear.csproj.CopyComplete
+E:\Mod试做\MagicalSpear\MagicSpear\obj\Debug\MagicSpear.dll
+E:\Mod试做\MagicalSpear\MagicSpear\obj\Debug\MagicSpear.pdb
