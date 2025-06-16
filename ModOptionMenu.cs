@@ -1,10 +1,7 @@
 ﻿using BepInEx.Logging;
 using UnityEngine;
 using Menu.Remix.MixedUI;
-using BepInEx.Logging;
-using Menu.Remix.MixedUI;
 using Menu.Remix.MixedUI.ValueTypes;
-using UnityEngine;
 using RWCustom;
 using IL.Menu;
 

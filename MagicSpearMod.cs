@@ -57,10 +57,12 @@ namespace MagicSpear
             On.Player.Update += Player_Update;
             On.Player.Die += Player_Die;
             On.Spear.Update += Spear_Update;
-/*            On.Spear.PickedUp += Spear_PickedUp;
-            On.Weapon.Grabbed += Weapon_Grabbed;*/
-/*            On.Spear.ChangeMode += Spear_ChangeMode;*/
-/*            On.Spear.HitSomething += Spear_HitSomething;*/
+            //On.Spear.PickedUp += Spear_PickedUp;
+            //On.Weapon.Grabbed += Weapon_Grabbed;
+            //On.Spear.ChangeMode += Spear_ChangeMode;
+            //On.Spear.HitSomething += Spear_HitSomething;
+
+            MagicSpearManager.HookOn();
         }
 
         private static void Spear_ChangeMode(On.Spear.orig_ChangeMode orig, Spear self, Weapon.Mode newMode)
@@ -106,7 +108,7 @@ namespace MagicSpear
             {
                 if (MagicSpearManager.magicSpearRings.TryGetValue(self.thrownBy as Player, out var module)) 
                 {
-            Debug.Log("Hit smth");
+                    Debug.Log("Hit smth");
                     if (module.instances.Contains(self)) 
                     {
                         if (optionsMenuInstance.ifdestroy.Value)
@@ -136,14 +138,13 @@ namespace MagicSpear
             MagicSpearManager.magicSpearRings.Add(self, new MagicSpearManager.MagicSpearRing(self,
                 optionsMenuInstance.examrange.Value, optionsMenuInstance.ringradius.Value, optionsMenuInstance.color.Value));
         }
-        
+    
         private static void Spear_Update(On.Spear.orig_Update orig, Spear self, bool eu)
         {
-           //矛被抓取时添加到列表同时改变属性
-           orig.Invoke(self, eu);
-           if (self is ExplosiveSpear || self is ElectricSpear) return;
-
-           if(self.grabbedBy.Count>0)
+            //矛被抓取时添加到列表同时改变属性
+            orig.Invoke(self, eu);
+            if (self is ExplosiveSpear || self is ElectricSpear) return;
+            if (self.grabbedBy.Count > 0)
             {
                 foreach (var player in self.room.game.Players)
                 {
@@ -156,16 +157,15 @@ namespace MagicSpear
                         }
                     }
                 }
-                        }
+            }
            if (IsCraftable()&&self.grabbedBy.Any())
            {
-                  var grasp = self.grabbedBy[0];
-                   if (grasp.grabber is Player)
-                   {
-                        if (MagicSpearManager.magicSpearRings.TryGetValue(grasp.grabber as Player, out var module)
-                        &&self.mode!=MagicSpearManager.Spin)
-                        { 
-                            //对矛的调整: 将矛取消被拾取状态，物理阻力设为0
+                var grasp = self.grabbedBy[0];
+                if (grasp.grabber is Player)
+                {
+                    if (MagicSpearManager.magicSpearRings.TryGetValue(grasp.grabber as Player, out var module) && self.mode != MagicSpearManager.Spin)
+                    {
+                        //对矛的调整: 将矛取消被拾取状态，物理阻力设为0
                         self.grabbedBy[0].Release();
                         self.grabbedBy.Clear();
                         self.gravity = 0;
@@ -176,20 +176,16 @@ namespace MagicSpear
                         self.mode = MagicSpearManager.Spin;
                         module.instances.Add(self);
                         module.instance_num++;
-                        }
-                   }
-           }
+                    }
+                }
+            }
         }
 
         public static bool IsCraftable() 
         { 
-            if(optionsMenuInstance.craftable.Value==KeyCode.None)return false;
-            else if(Input.GetKey(optionsMenuInstance.craftable.Value)) return true;
-            else return false;
+            if (optionsMenuInstance.craftable.Value == KeyCode.None) { return false; }
+            if (Input.GetKey(optionsMenuInstance.craftable.Value)) { return true; }
+            return false;
         }
-
     }
-}   
-
-    
-
+}

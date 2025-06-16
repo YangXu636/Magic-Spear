@@ -13,3 +13,13 @@ E:\Mod试做\MagicalSpear\MagicSpear\obj\Debug\MagicSpear.csproj.CoreCompileInpu
 E:\Mod试做\MagicalSpear\MagicSpear\obj\Debug\MagicSpear.csproj.CopyComplete
 E:\Mod试做\MagicalSpear\MagicSpear\obj\Debug\MagicSpear.dll
 E:\Mod试做\MagicalSpear\MagicSpear\obj\Debug\MagicSpear.pdb
+D:\MakeMods\Rain World\Magic-Spear\bin\Debug\MagicSpear.dll
+D:\MakeMods\Rain World\Magic-Spear\bin\Debug\MagicSpear.pdb
+D:\MakeMods\Rain World\Magic-Spear\bin\Debug\UnityEngine.SharedInternalsModule.dll
+D:\MakeMods\Rain World\Magic-Spear\obj\Debug\MagicSpear.csproj.AssemblyReference.cache
+D:\MakeMods\Rain World\Magic-Spear\obj\Debug\MagicSpear.csproj.CoreCompileInputs.cache
+D:\MakeMods\Rain World\Magic-Spear\obj\Debug\MagicSpear.csproj.CopyComplete
+D:\MakeMods\Rain World\Magic-Spear\obj\Debug\MagicSpear.dll
+D:\MakeMods\Rain World\Magic-Spear\obj\Debug\MagicSpear.pdb
+D:\MakeMods\Rain World\Magic-Spear\bin\Debug\HOOKS-Assembly-CSharp.dll
+D:\MakeMods\Rain World\Magic-Spear\bin\Debug\PUBLIC-Assembly-CSharp.dll

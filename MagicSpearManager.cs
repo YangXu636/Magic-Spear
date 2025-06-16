@@ -18,6 +18,31 @@ namespace MagicSpear
         public static readonly Weapon.Mode Spin = new Weapon.Mode("Spin");
         public static readonly Weapon.Mode Attack = new Weapon.Mode("Attack");
         public static readonly Weapon.Mode Attacked = new Weapon.Mode("Attacked");
+
+        public static void HookOn()
+        {
+            On.ScavengerAI.WeaponScore += ScavengerAI_WeaponScore;
+            On.ItemTracker.ItemNoticed += ItemTracker_ItemNoticed;
+        }
+
+        private static int ScavengerAI_WeaponScore(On.ScavengerAI.orig_WeaponScore orig, ScavengerAI self, PhysicalObject obj, bool pickupDropInsteadOfWeaponSelection, bool reallyWantsSpear)
+        {
+            if (obj is Spear spear && (spear.mode == Spin || spear.mode == Attack || spear.mode == Attacked))
+            {
+                return 0;
+            }
+            return orig(self, obj, pickupDropInsteadOfWeaponSelection, reallyWantsSpear);
+        }
+
+        private static ItemTracker.ItemRepresentation ItemTracker_ItemNoticed(On.ItemTracker.orig_ItemNoticed orig, ItemTracker self, AbstractPhysicalObject item)
+        {
+            if (item?.realizedObject is Spear spear && (spear.mode == Spin || spear.mode == Attack || spear.mode == Attacked))
+            {
+                return null;
+            }
+            return orig(self, item);
+        }
+
         internal class MagicSpearRing: UpdatableAndDeletable
         {
             WeakReference<Player> playerRef;
@@ -181,9 +206,9 @@ namespace MagicSpear
                         {
                             if (creature.state.socialMemory.GetOrInitiateRelationship(id).like > 0f)//如果是蜥蜴或者拾荒，好感超过0则不攻击
                                 continue;
-                            else return creature;
+                            return creature;
                         }
-                        else return creature;
+                        return creature;
                     }
                 }
                 return null;

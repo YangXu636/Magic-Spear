@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -31,20 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Mod通用reference\Assembly-CSharp.dll</HintPath>
-    </Reference>
     <Reference Include="BepInEx, Version=5.4.17.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Mod通用reference\BepInEx.dll</HintPath>
     </Reference>
     <Reference Include="HOOKS-Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Mod通用reference\HOOKS-Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\Download\Steam\steamapps\common\Rain World\BepInEx\plugins\HOOKS-Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="PUBLIC-Assembly-CSharp">
-      <HintPath>..\..\Mod通用reference\PUBLIC-Assembly-CSharp.dll</HintPath>
+    <Reference Include="PUBLIC-Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Download\Steam\steamapps\common\Rain World\BepInEx\utils\PUBLIC-Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -79,4 +77,9 @@
     <Content Include="README.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy "D:\MakeMods\Rain World\Magic-Spear\bin\Debug\MagicSpear.dll" "D:\Download\Steam\steamapps\common\Rain World\RainWorld_Data\StreamingAssets\mods\MagicSpear\newest\plugins" /Y /L
+copy "D:\MakeMods\Rain World\Magic-Spear\bin\Debug\MagicSpear.pdb" "D:\Download\Steam\steamapps\common\Rain World\RainWorld_Data\StreamingAssets\mods\MagicSpear\newest\plugins" /Y /L
+</PostBuildEvent>
+  </PropertyGroup>
 </Project>
